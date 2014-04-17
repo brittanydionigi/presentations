@@ -3,66 +3,72 @@
 
   <head>
     <meta charset="utf-8">
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <title>JavaScript <3</title>
 
     <meta name="description" content="JavaScript Basics">
     <meta name="author" content="Brittany Storoz">
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/zenburn.css">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/reveal/css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="../assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../assets/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
   </head>
 
   <body>
 
-    <div id="reveal">
+    <div class="reveal">
 
       <!-- Used to fade in a background when a specific slide state is reached -->
       <div class="state-background"></div>
 
-      <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
           <h1>JavaScript <3</h1>
-          <div id="author">
-            <p><b>Brittany Storoz</b> // interactive developer @ NYTimes</p>
-            <p><a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
-          </div>
-          <script>
-            // Delicously hacky. Look away.
-            if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-            document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-          </script>
+          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
         </section>
 
         <section>
           <h2>What is it good for?</h2>
           <ul>
-            <li>Adding interactivity to your page</li>
-            <li>Creating data/content visualizations</li>
-            <li>Building large-scale applications with complex UIs</li>
+            <li class="fragment">Adding interactivity to your page</li>
+            <li class="fragment">Creating data/content visualizations</li>
+            <li class="fragment">Building large-scale applications with complex UIs</li>
           </ul>
         </section>
         <section>
           <h2>JavaScript Data Types</h2>
           <ul>
-            <li>Strings</li>
-            <li>Numbers</li>
-            <li>Booleans</li>
-            <li>Arrays</li>
-            <li>Objects</li>
-            <li>Undefined / Null</li>
+            <li class="fragment">Strings</li>
+            <li class="fragment">Numbers</li>
+            <li class="fragment">Booleans</li>
+            <li class="fragment">Arrays</li>
+            <li class="fragment">Objects</li>
+            <li class="fragment">Undefined / Null</li>
           </ul>
         </section>
         <section>
-          <h2>Psych!</h2>
-          <h3 class="emph">Everything is an object.</h3>
-          <p class="right-align">(Sort of.)</p>
+          <section>
+            <h2>Psych!</h2>
+            <h3 class="fragment">Everything is an object.</h3>
+            <p class="fragment">(Sort of.)</p>
+          </section>
           <section>
             <pre><code contenteditable>var testScores = [90, 85, 87, 59];
 testScores.push(82);</code></pre>
@@ -80,19 +86,22 @@ console.log(testScores[1]) // Ben received an 85</code></pre>
         </section>
 
         <section>
-          <h2>A little history...</h2>
+          <h2>Libraries & Frameworks</h2>
+          <h3>But first a little history...</h3>
           <ul>
-            <li>JavaScript is quirky; not the most semantic</li>
-            <li>Developers started writing JS libraries to help disguise/alleviate some of the language's painpoints.</li>
+            <li class="fragment">JavaScript is quirky. Some things about the language really *don't* make sense.</li>
+            <li class="fragment">Developers started writing JS libraries to help disguise/alleviate some of the language's painpoints.</li>
           </ul>
         </section>
         <section>
-          <h2>Behind the Scenes</h2>
           <section>
+          <h2>Behind the Scenes</h2>
           <ul>
-            <li>jQuery makes writing JavaScript easier and more semantic</li>
-            <li>A JavaScript short-hand of sorts. For example:</li>
+            <li class="fragment">jQuery makes writing JavaScript easier and more semantic</li>
+            <li class="fragment">A JavaScript short-hand of sorts. For example:</li>
           </ul>
+        </section>
+        <section>
           <pre><code contenteditable>document.getElementById('elementId'); // JavaScript
 
 $('#elementId'); // jQuery
@@ -113,43 +122,45 @@ $('#elementId'); // jQuery
         </section>
       </section>
         <section id="writing-functions">
-          <h2>Writing Functions</h2>
-            <section>
-              <h4>Function declaration</h4>
+          <section>
+              <h2>Writing Functions (pt. 1)</h2>
+              <h3 class="fragment">Function declaration</h3>
                 <ul>
-                  <li>loaded before any code is executed</li>
-                  <li>causes the entire function definition to be 'hoisted'</li>
+                  <li class="fragment">loaded before any code is executed</li>
+                  <li class="fragment">causes the entire function definition to be 'hoisted'</li>
                 </ul>
-                <pre><code>alert(foo()); // Alerts 5.
+                <pre class="fragment"><code>alert(foo()); // Alerts 5.
 function foo() { return 5; }</code></pre>
             </section>
             <section>
-            <h4>Function expression</h4>
+              <h2>Writing Functions (pt. 2)</h2>
+            <h3>Function expression</h3>
               <ul>
-                <li>only loaded when we specifically ask for them</li>
-                <li>only the name gets hoisted, not the initialization</li>
+                <li class="fragment">only loaded when we specifically ask for them</li>
+                <li class="fragment">only the name gets hoisted, not the initialization</li>
               </ul>
-              <pre><code>alert(foo()); // ERROR! foo wasn't loaded yet
+              <pre class="fragment"><code>alert(foo()); // ERROR! foo wasn't loaded yet
 var foo = function() { return 5; }</code></pre>
           </section>
           <section>
-            <h4>Function Literal (IIFE)</h4>
+              <h2>Writing Functions (pt. 3)</h2>
+            <h3>Function Literal (IIFE)</h3>
               <ul>
-                <li>invoked immediately</li>
-                <li>evaluated as an expression, e.g. <pre class="inline"><code>(2 * 5)</code></pre></li>
+                <li class="fragment">invoked immediately</li>
+                <li class="fragment">evaluated as an expression</li>
               </ul>
-              <pre><code>(function() {
+              <pre class="fragment"><code>(function() {
   // do stuff immediately
 })()</code></pre>
           </section>
         </section>
         <section id="jargon">
-          <h2>Jargon</h2>
           <section>
-          <h4>null vs. undefined</h4>
-          <p><b>Null:</b> deliberately set value of nothing; intentional placeholder</p>
-          <p><b>Undefined:</b> value of nothing because you have not provided one</p>
-          <pre><code>var scores = {
+          <h2>Jargon</h2>
+          <h3 class="fragment">null vs. undefined</h3>
+          <p class="fragment"><b>Null:</b> deliberately set value of nothing; intentional placeholder</p>
+          <p class="fragment"><b>Undefined:</b> value of nothing because you have not provided one</p>
+          <pre class="fragment"><code>var scores = {
   "james": null,
   "sarah": 90
 }
@@ -158,9 +169,11 @@ console.log(scores.james) // returns null
 console.log(scores.bryan) // returns undefined</code></pre>
         </section>
         <section>
-         <h4>args vs. params</h4><p><b>Arguments:</b> used to invoke a function</p>
-         <p><b>Parameters:</b> used to define a function</p>
-         <pre><code>refreshCart(these, are, args);
+          <h2>Jargon</h2>
+          <h3 class="fragment">args vs. params</h3>
+          <p class="fragment"><b>Arguments:</b> used to invoke a function</p>
+         <p class="fragment"><b>Parameters:</b> used to define a function</p>
+         <pre class="fragment"><code>refreshCart(these, are, args);
 
 function refreshCart(these, are, params) {
   // do stuff here
@@ -169,9 +182,10 @@ function refreshCart(these, are, params) {
 
        </section>
        <section>
-            <h4>Method vs. function</h4>
-            <p><b>Method:</b> a function that is defined as a property of an object. This object is implicitly passed as the context for the function.</p>
-         <pre><code>function refreshCart() { // this is a function }
+          <h2>Jargon</h2>
+          <h3 class="fragment">Method vs. function</h3>
+            <p class="fragment"><b>Method:</b> a function that is defined as a property of an object. This object is implicitly passed as the context for the function.</p>
+         <pre class="fragment"><code>function refreshCart() { // this is a function }
 var cart = {
   items: ["milk","eggs","cereal"]
   refresh: function() {
@@ -183,7 +197,7 @@ var cart = {
 
         </section>
         </section>
-        <section id="l-and-r">
+        <section>
           <h2>Links & Resources</h2>
           <ul>
             <li><a href="https://twitter.com/brittanystoroz/lists/fellow-freaks-geeks">@fellow freaks and geeks</a></li>
@@ -201,51 +215,38 @@ var cart = {
 
       </div>
 
-      <!-- The navigational controls UI -->
-      <aside class="controls">
-        <a class="left" href="#">&#x25C4;</a>
-        <a class="right" href="#">&#x25BA;</a>
-        <a class="up" href="#">&#x25B2;</a>
-        <a class="down" href="#">&#x25BC;</a>
-      </aside>
-
-      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-      <div class="progress"><span></span></div>
-
     </div>
-    <script src="lib/highlight.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="../assets/reveal/lib/js/head.min.js"></script>
+    <script src="../assets/reveal/js/reveal.min.js"></script>
+
     <script>
-        // Parse the query string into a key/value object
-        var query = {};
-        location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-                query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-        } );
 
-        Reveal.initialize({
-                // Display controls in the bottom right corner
-                controls: true,
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-                // Display a presentation progress bar
-                progress: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-                // If true; each slide will be pushed to the browser history
-                history: true,
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
 
-                // Flags if mouse wheel navigation should be enabled
-                mouseWheel: true,
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-                // Apply a 3D roll to links on hover
-                rollingLinks: true,
-
-                // UI style
-                theme: query.theme || 'neon', // default/neon
-
-                // Transition style
-                transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-        });
-
-        hljs.initHighlightingOnLoad();
     </script>
   </body>
 </html>

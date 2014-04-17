@@ -3,24 +3,48 @@
 
   <head>
     <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <title>Developing on Deadline</title>
 
-    <title>Deadline-Driven Development: Managing the Technical Debt</title>
-
-    <meta name="description" content="JavaScript Basics">
+    <meta name="description" content="Developing on Deadline">
     <meta name="author" content="Brittany Storoz">
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/zenburn.css">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/reveal/css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="../assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../assets/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      div.two-col {
+        display: inline-block;
+        width: 42%;
+        margin: 0 4%;
+        float: left;
+      }
+
+      .reveal h1 { font-size: 2em; margin-bottom: 20px; }
+      .reveal h4 { margin-top: 30px; text-transform: uppercase; font-weight: 200; }
+    </style>
   </head>
 
   <body>
 
-    <div id="reveal">
+    <div class="reveal">
 
       <!-- Used to fade in a background when a specific slide state is reached -->
       <div class="state-background"></div>
@@ -29,133 +53,111 @@
       <div class="slides">
         <section>
           <h1>Developing on Deadline:</h1>
-          <h2 style="line-height: 68px; padding-top: 15px; display: block;">Keeping a clean code base & Managing technical debt</h2>
-
-          <h4 style="text-align: center; margin: 20px auto; padding-top: 50px; display: block; line-height: 48px;">Flatiron School | Feb 2014<br /><a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></h4>
-          <script>
-            // Delicously hacky. Look away.
-            if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-            document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-          </script>
+          <h3>Keeping a clean code base &<br />Managing technical debt</h3>
+          <br />
+          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
         </section>
 
         <section>
           <h2>Healthy vs. Habit Hacks</h2>
-          <section>
+          <div class="two-col">
             <h4>Healthy</h4>
-          <ul>
-            <li>only when absolutely necessary</li>
-            <li>no better solution at the time; quick fix for live code</li>
-            <li>commit message explaining why it happened/how it should be fixed</li>
-          </ul>
-        </section>
-        <section>
-          <h4>Habit</h4>
-          <ul>
-            <li>little or no explanation for the new code</li>
-            <li>doesn't conform to style standards/doesn't validate</li>
-            <li>no follow-up or future plans for correcting it</li>
+            <ul>
+              <li class="fragment">only when absolutely necessary</li>
+              <li class="fragment">no better solution at the time; quick fix for live code</li>
+              <li class="fragment">commit message explaining why it happened/how it should be fixed</li>
             </ul>
-          </section>
+          </div>
+          <div class="two-col">
+            <h4>Habit</h4>
+            <ul>
+              <li class="fragment">little or no explanation for the new code</li>
+              <li class="fragment">doesn't conform to style standards/doesn't validate</li>
+              <li class="fragment">no follow-up or future plans for correcting it</li>
+            </ul>
+          </div>
         </section>
+
 
         <section>
-          <h2>The deadline-weathered codebase</h2>
-          <ul>
-            <li>Little or no testing</li>
-            <li>Outdated/Vague documentation</li>
-            <li>No styling standards (i.e. indentation, comments, whitespace)</li>
-            <li>Uninformative/noisy commit history</li>
-          </ul>
-        </section>
-
-        <section id="l-and-r">
-          <h2>Links & Resources</h2>
           <section>
-            <h4>Hinting / Linting / Beautifying</h4>
-          <ul>
-            <li><a href="http://jsbeautifier.org/">jsbeautifier</a></li>
-            <li><a href="http://www.jshint.com/">js hint</a></li>
-            <li><a href="http://www.jslint.com/">js lint</a></li>
-            <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments">Tips on commenting your javascript</a></li>
-          </ul>
-        </section>
-          <section>
-
-          <h4>Testing Frameworks:</h4>
-          <ul>
-            <li><a href="http://qunitjs.com/">qUnit</a></li>
-            <li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
-            <li><a href="http://chaijs.com/">Chai</a></li>
-            <li><a href="http://pivotal.github.io/jasmine/">Jasmine</a></li>
-            <li><a href="http://sinonjs.org/">sinon</a></li>
-          </ul>
-        </section>
-        <section>
-
-          <h4>Grunt Goodies:</h4>
-          <ul>
-            <li><a href="http://gruntjs.com/">Grunt</a></li>
-            <li><a href="http://gruntjs.com/plugins">Grunt Plugins</a></li>
-          </ul>
+            <h2>Links & Resources (pt. 1)</h2>
+            <div class="two-col">
+              <h4>Hint/Lint/Beautify:</h4>
+              <ul>
+                <li><a href="http://jsbeautifier.org/">jsbeautifier</a></li>
+                <li><a href="http://www.jshint.com/">js hint</a></li>
+                <li><a href="http://www.jslint.com/">js lint</a></li>
+                <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Comments#Comments">commenting code</a></li>
+              </ul>
+            </div>
+            <div class="two-col">
+              <h4>Test Suites:</h4>
+              <ul>
+                <li><a href="http://qunitjs.com/">qUnit</a></li>
+                <li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
+                <li><a href="http://chaijs.com/">Chai</a></li>
+                <li><a href="http://pivotal.github.io/jasmine/">Jasmine</a></li>
+                <li><a href="http://sinonjs.org/">sinon</a></li>
+              </ul>
+            </div>
           </section>
           <section>
-          <h4>Git Goodies:</h4>
-          <ul>
-            <li><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Writing commit messages</a></li>
-            <li><a href="http://git-scm.com/book">Git Pro - Book</a></li>
-          </ul>
-        </section>
+            <h2>Links & Resources (pt. 2)</h2>
+            <div class="two-col">
+              <h4>Grunt Goodies:</h4>
+              <ul>
+                <li><a href="http://gruntjs.com/">Grunt</a></li>
+                <li><a href="http://gruntjs.com/plugins">Grunt Plugins</a></li>
+              </ul>
+            </div>
+            <div class="two-col">
+              <h4>Git Goodies:</h4>
+              <ul>
+                <li><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Commit messages</a></li>
+                <li><a href="http://git-scm.com/book">Git Pro - Book</a></li>
+              </ul>
+            </div>
+          </section>
         </section>
 
 
       </div>
 
-      <!-- The navigational controls UI -->
-      <aside class="controls">
-        <a class="left" href="#">&#x25C4;</a>
-        <a class="right" href="#">&#x25BA;</a>
-        <a class="up" href="#">&#x25B2;</a>
-        <a class="down" href="#">&#x25BC;</a>
-      </aside>
-
-      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-      <div class="progress"><span></span></div>
-
     </div>
-    <script src="lib/highlight.js"></script>
-    <script src="js/reveal.js"></script>
+
+    <script src="../assets/reveal/lib/js/head.min.js"></script>
+    <script src="../assets/reveal/js/reveal.min.js"></script>
+
     <script>
-        // Parse the query string into a key/value object
-        var query = {};
-        location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-                query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-        } );
 
-        Reveal.initialize({
-                // Display controls in the bottom right corner
-                controls: true,
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-                // Display a presentation progress bar
-                progress: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-                // If true; each slide will be pushed to the browser history
-                history: true,
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
 
-                // Flags if mouse wheel navigation should be enabled
-                mouseWheel: true,
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-                // Apply a 3D roll to links on hover
-                rollingLinks: true,
-
-                // UI style
-                theme: query.theme || 'neon', // default/neon
-
-                // Transition style
-                transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-        });
-
-        hljs.initHighlightingOnLoad();
     </script>
   </body>
 </html>
