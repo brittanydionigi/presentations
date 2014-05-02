@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <title>Technically Speaking, We're Not Writers</title>
+
+    <meta name="description" content="Technically Speaking, We're Not Writers">
+    <meta name="author" content="Brittany Storoz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/reveal/css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="../assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../assets/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Technically Speaking, We're Not Writers</h1>
+          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
+        </section>
+
+        <section>
+          <h2>TKTKTKTKTKTK</h2>
+          <ul>
+            <li class="fragment">TKTKTKTKTKTK</li>
+            <li class="fragment">TKTKTKTKTKTK</li>
+            <li class="fragment">TKTKTKTKTKTK</li>
+            <li class="fragment">TKTKTKTKTKTK</li>
+          </ul>
+
+          <aside class="notes">
+            <p>1) Makes it difficult to get readable diffs with extraneous styling changes.
+            2) Way more time trying to figure out how to work with the codebase, making deadlines even tighter
+            3) Bug prone; no clear definition of app intentions
+            4) No explanation for why code was written/what it was intened to do; tough to look back</p>
+          </aside>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable>
+function pointsToAward(questionPosition, inputVal, correctVal) {
+  var points_earned, plus_seven, plus_three, plus_one;
+  switch (questionPosition) {
+    case 2:
+      plus_one = (parseInt(inputVal) >= (parseInt(correctVal) - 5)) ? 1 : 0
+      plus_three = (parseInt(inputVal) >= (parseInt(correctVal) - 3)) ? 3 : plus_one;
+    break;
+    case 10:
+      plus_one = (parseInt(inputVal) >= (parseInt(correctVal) - 3)) ? 1 : 0
+      plus_three = (parseInt(inputVal) >= (parseInt(correctVal) - 2)) ? 3 : plus_one;
+    break;
+    case 18:
+      plus_one = (parseInt(inputVal) >= (parseInt(correctVal) - 7)) ? 1 : 0
+      plus_three = (parseInt(inputVal) >= (parseInt(correctVal) - 3)) ? 3 : plus_one;
+    break;
+  }
+  plus_seven = (parseInt(inputVal) === parseInt(correctVal)) ? 7 : plus_three;
+  points_earned = (!parseInt(inputVal)) ? undefined : plus_seven
+  return points_earned;
+}
+          </code></pre>
+
+          <aside class="notes">
+            <p>This is NOT technical debt if a, b, c & d.<br />Hacky code like this isn't technical debt, it's a part of life. Sometimes you have to write bad code. Sometimes you write bad code but you don't know it's bad.</p>
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>So What Is Technical Debt?</h2>
+          <ul>
+            <li class="fragment">Technical debt is a symptom of poor planning around preventing & fixing hacky code.</li>
+            <li class="fragment">Technical debt is a process problem - a workflow problem - not a skills, laziness or deadline problem.</li>
+            <li class="fragment">Technical debt is a sign of not using the right tools.</li>
+          </ul>
+
+          <aside class="notes">
+            <p>We shouldn't *have* to think about these things.</p>
+          </aside>
+        </section>
+
+
+        <section>
+          <h2>Oh just make a style guide.</h2>
+          <h3>Post it somewhere in the depths of your internal admin.</h3>
+          <aside class="notes">
+            <p>and that's exactly the problem...nobody is going to find it, nobody is going to follow it.<br />
+              jsbeautifier can take care of a lot of these styling issues - we'll talk about that a little more later -
+              but what about something like how you comment your code? what makes it easier for people to follow conventions without having to memorize them or reference something all the time?  (show jsdoc snips, autodoc generator).<br />
+              snippets are mostly marketed for how quickly they make certain tasks but I like them because they're a quality thing too. you know your comment styling is always going to be on par when you have a package autocompleting it.<br />
+              create an internal package for ST2/whatever text editors your team uses that conforms to the style standards you guys set</p>
+          </aside>
+        </section>
+        <section>
+          <h2>Write your tests.</h2>
+          <h3>They must be important. It seems everyone would just *die* without them.</h3>
+          <aside class="notes">
+            <p>that said, here's an example of a test pg live in prod. and guess what, NOBODY is dead.<br />
+              writing tests is a LUXURY. which is why we're all so adamant about telling people to write them.<br />
+              for those of you who dont write tests because you dont like to, I'll say that again, writing tests is a LUXURY. like diamonds.<br />
+              never take for granted the time you have to write tests. BUT. if you truly DONT have time to write them, like if you work at the NYT, what is to be done?<br />
+              show stubbing out tests example with st2 plugin - have them scream things out at me to test.<br />
+              so this is my version of taking notes. don't take notes with a pen and paper. we are not in the 1800s. stub your tests.<br />
+              also useful about this is if you don't have time to write tests, you're probably not thinking much about documentation. no readme? no autodoc? this IS your doc. even if you dont write the tests, describing them is half the battle anyway.<br />
+              when you do build your project, and get back to cleanup - go back to your unwritten tests first. will force you to refactor code that's probably already on your to-do list.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <h2>Learn how to use git.</h2>
+          <h3>Not just the push, pull, branch, add, commit, merge, stash bits. The even better bits.</h3>
+          <aside class="notes">
+            <p>git is one of my fave things. ive found a lot of ways to use it and also abuse it. couple things i'll touch on here.<br />
+              at the times, unconventional use of git. i used to be really strict about my diffs and my commit messages, but on deadline, its impossible to worry about such things.</p>
+          </aside>
+        </section>
+
+
+        <section>
+          <ul id="commits">
+            <li class="fragment" data-fragment-index="11"><img src="img/commit-11.png" /></li>
+            <li class="fragment" data-fragment-index="10"><img src="img/commit-10.png" /></li>
+            <li class="fragment" data-fragment-index="9"><img src="img/commit-9.png" /></li>
+            <li class="fragment" data-fragment-index="8"><img src="img/commit-8.png" /></li>
+            <li class="fragment" data-fragment-index="7"><img src="img/commit-7.png" /></li>
+            <li class="fragment" data-fragment-index="6"><img src="img/commit-6.png" /></li>
+            <li class="fragment" data-fragment-index="5"><img src="img/commit-5.png" /></li>
+            <li class="fragment" data-fragment-index="4"><img src="img/commit-4.png" /></li>
+            <li class="fragment" data-fragment-index="3"><img src="img/commit-3.png" /></li>
+            <li class="fragment" data-fragment-index="2"><img src="img/commit-2.png" /></li>
+            <li class="fragment" data-fragment-index="1"><img src="img/commit-1.png" /></li>
+          </ul>
+            <aside class="notes">
+              <p>f.e. a couple weeks back i was doing superbowl coverage with some of my teammates. and the git history started off pretty good, you know, affirmative case messages, all starting capitalized, no ending punctuation. then the game started. and things started getting hectic. there is no time in our environment for pull-requesting during the game or working on develop and merging into master, it's working on and pushing straight to production for 3-4 hours straight. so now what? we're left with a really sloppy, noisy commit history in master that we have to live with. here's the thing...</p>
+            </aside>
+        </section>
+
+        <section>
+          <h2>You don't always have to deploy from master.</h2>
+          <aside class="notes">
+            * for events like this, we'll create a new branch for production specifically for those 4 hours. anyone involved knows what branch we're working on and deploying from, and it can get as MESSY as we want.
+            * this means, that if there happened to be a huge bug that got fixed during the super bowl, yes, master is now no longer production ready since we've been working on this other branch.
+            * boo hoo. the cost of cherry-picking back into master is much less than the cost of having a disaster area of a commit history.
+            * not gunna lie, it is also nice to get the comic relief reading through frustrated/confused commit messages the next day. especially after a stressful event.
+            * so i know not all of you work in newsrooms or on deadlines quite as tight as this, but there are other scenarios where this approach makes sense.  (MN Daily finals weeks / week-long specialized ad promotion or something)</aside>
+        </section>
+
+        <section>
+          <h2>Pre/Post Commit Hooks</h2>
+          <ul>
+            <li class="fragment">Takes care of styling inconsistencies so we don't have to</li>
+            <li class="fragment">Ensures everyone is committing with the same settings</li>
+            <li class="fragment">Easy to add/remove & update</li>
+          </ul>
+          <aside class="notes">
+            * last month juan gave a great talk on build tools, if youre not using one of the 3 or 4 he described, pick one. start using it.
+            * use a pre-commit hook for beautifying, linting and testing (show JPs example)
+            * we should leave these things up to the developer? NO. WRONG. going to get different diffs any time you commit
+            * can't have a commit hook blocking going to production? simple as deleting the hook file</aside>
+        </section>
+
+        <section>
+          <h2>Links & Such</h2>
+          <ul>
+            <li><a href="https://github.com/spadgos/sublime-jsdocs">ST2 JSDoc Snippet</a></li>
+            <li><a href="http://sublimetext.info/docs/en/extensibility/snippets.html">Creating Custom ST2 Snippets</a></li>
+            <li><a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Using Git Hooks</a></li>
+            <li><a href="https://github.com/stephencelis/ghi">Command-Line Github Issues</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../assets/reveal/lib/js/head.min.js"></script>
+    <script src="../assets/reveal/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
