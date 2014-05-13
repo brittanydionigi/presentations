@@ -1,6 +1,8 @@
 Presentations
 =============
 
+[Reusable Charts & Graphics in D3](http://brittanystoroz.github.io/presentations/reusable-d3/index.html#/) || **JerseyScript** [ may 13 2014]
+
 [Taming the Technical Debt](http://brittanystoroz.github.io/presentations/taming-tech-debt/index.html#/) || **NYC HTML5 Meetup** [ march 12 2014]
 
 [Developing on Deadline](http://brittanystoroz.github.io/presentations/taming-tech-debt-lite/index.html#/) || **Flatiron School Brooklyn** [ march 6 2014]
