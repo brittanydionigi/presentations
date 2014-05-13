@@ -70,7 +70,7 @@ body { background-color: #fff; }
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #A4C6CF;
+  color: #18A218;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -79,7 +79,7 @@ body { background-color: #fff; }
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #D3E4E9;
+  color: #0BC20B;
   text-shadow: none;
   border: none; }
 
