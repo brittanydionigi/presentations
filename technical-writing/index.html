@@ -38,23 +38,23 @@
       <div class="slides">
         <section>
           <h1>Write Real Good</h1>
-          <p class="fragment">"The New York Times is winning at journalism."<br /><span style="font-size: 25px"><i>- The New York Times Internal Innovation Report, 2014</i></span></p><br />
           <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
-          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
+          <p class="fragment">"The New York Times is winning at journalism."<br /><span style="font-size: 25px"><i>- The New York Times Internal Innovation Report, 2014</i></span></p>
         </section>
 
         <section>
           <h2>First Things First</h2>
           <h3 class="fragment">Take a reader-centered approach.</h3>
-          <ul>
-            <li class="fragment">If you are open-sourcing a JavaScript library, your docs code should be in... <span class="fragment"><b>JavaScript!</b></span> <span class="fragment">And definitely not in...</span> <span class="fragment"><b>anything else.</b></span> <span class="fragment" style="margin-top: 20px">Especially CoffeeScript.</span> <span class="fragment"><b>:skull:</b></span></li>
-          </ul>
-          <h3 class="fragment">Get to the bottom line.</h3>
-          <ul>
-            <li class="fragment">"Does this software do what I want to do?"</li>
-          </ul>
+          <p class="fragment">If you are open-sourcing a JavaScript library, your docs code should be in... <span class="fragment"><b>JavaScript!</b></span> <span class="fragment">And definitely not in...</span> <span class="fragment"><b>anything else.</b></span> <span class="fragment" style="padding-top: 30px;display:block;text-align:center;"><b>Especially CoffeeScript.</b></span> <span class="fragment" style="padding-top: 30px;display:block;text-align:center;">:skull:</span></p>
 
           <!-- DEMO LINKS!!!!! -->
+        </section>
+
+        <section>
+          <h2>First Things First</h2>
+          <h3>Get to the bottom line.</h3>
+          <p class="fragment">"Does this software do what I want to do?"</p>
         </section>
 
         <section>
@@ -70,16 +70,17 @@
           <h3>Just as we write modular code, we should write modular documentation.</h3>
         </section>
         <section>
-          <h2>What?</h2>
           <h3>Modularity in documentation is about usability and accessibility</h3>
+          <img src="img/googleable.png" />
         </section>
         <section>
           <h2>How Do Readers Read?</h2>
-          <ul>
-            <li class="fragment">Low-context users read <b>sequentially</b></li>
-            <li class="fragment">High-context readers <b>⌘ + F</b></li>
+          <img src="img/searchable.png" />
         </section>
-
+        <section>
+          <h3>Low-context users read <b>sequentially</b></h3>
+          <h3>High-context users <b>⌘ + F</b></h3>
+        </section>
         <section>
           <h2>Getting Feedback & Adapting To It</h2>
           <ul>
@@ -91,15 +92,21 @@
         </section>
 
         <section>
-          <h2>Other Things We Care About</h2>
+          <h2>Other Things We<br /> Care About</h2>
+        </section>
+        <section>
           <div class="fragment">
             <h3>Conciseness</h3>
             <img src="img/concise.png" />
           </div>
+        </section>
+        <section>
           <div class="fragment">
-            <h3>Demos</h3>
+            <h3>Timely Demos</h3>
             <img src="img/code-demos.png" />
           </div>
+        </section>
+        <section>
           <div class="fragment">
             <h3>Fugliness</h3>
             <img src="img/fug.png" />
@@ -108,11 +115,12 @@
         <section>
           <h2>Links & Such</h2>
           <ul>
-            <li><a href="https://github.com/PharkMillups/beautiful-docs">Beautiful Docs</a></li>
-            <li><a href="http://sublimetext.info/docs/en/extensibility/snippets.html">Creating Custom ST2 Snippets</a></li>
-            <li><a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Using Git Hooks</a></li>
-            <li><a href="https://github.com/stephencelis/ghi">Command-Line Github Issues</a></li>
+            <li><a href="https://github.com/PharkMillups/beautiful-docs">Beautiful Docs (documentation about documentation)</a></li>
+            <li><a href="http://www.amazon.com/Handbook-Technical-Writing-Tenth-Gerald/dp/1250004411/ref=sr_1_1?s=books&ie=UTF8&qid=1400183390&sr=1-1&keywords=technical+writing">Technical Writing Handbook</a></li>
+            <li><a href="#">/brittanystoroz (me, everywhere)</a></li>
           </ul>
+          <br /><br /><br />
+          <img src="img/schiffer.png" />
         </section>
 
       </div>
@@ -130,7 +138,7 @@
         controls: true,
         progress: true,
         history: true,
-        center: true,
+        center: false,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
