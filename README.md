@@ -1,6 +1,8 @@
 Presentations
 =============
 
+[Technical Writing](http://brittanystoroz.github.io/presentations/technical-writing/index.html#/) || **BrooklynJS** [ may 15 2014]
+
 [Reusable Charts & Graphics in D3](http://brittanystoroz.github.io/presentations/reusable-d3/index.html#/) || **JerseyScript** [ may 13 2014]
 
 [Taming the Technical Debt](http://brittanystoroz.github.io/presentations/taming-tech-debt/index.html#/) || **NYC HTML5 Meetup** [ march 12 2014]
