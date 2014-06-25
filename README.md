@@ -1,6 +1,8 @@
 Presentations
 =============
 
+[Extending DevTools for Custom Debugging](http://brittanystoroz.github.io/presentations/debugging-tools/index.html#/) || **LXJS** [ june 28 2014]
+
 [Technical Writing](http://brittanystoroz.github.io/presentations/technical-writing/index.html#/) || **BrooklynJS** [ may 15 2014]
 
 [Reusable Charts & Graphics in D3](http://brittanystoroz.github.io/presentations/reusable-d3/index.html#/) || **JerseyScript** [ may 13 2014]
