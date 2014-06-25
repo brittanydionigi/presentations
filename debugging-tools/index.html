@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <title>Extending DevTools for Custom Debugging</title>
+
+    <meta name="description" content="Extending DevTools for Custom Debugging">
+    <meta name="author" content="Brittany Storoz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/reveal/css/theme/b-and-w.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="../assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../assets/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Extending DevTools for Custom Debugging</h1>
+          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
+        </section>
+        <section>
+          <h2>There's a panel for that.</h2>
+          <p>Beep boop.</p>
+        </section>
+
+        <section>
+          <h2>What to provide</h2>
+          <ul>
+            <li class="fragment">state of MVC</li>
+            <li class="fragment">performance monitoring</li>
+            <li class="fragment">info/deps</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>THE API</h2>
+          <p>Beep boop</p>
+        </section>
+
+        <section>
+          <h2>Links & Such</h2>
+          <ul>
+            <li><a href="#">Beep boop</a></li>
+            <li><a href="#">Beep boop</a></li>
+            <li><a href="#">Beep boop</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../assets/reveal/lib/js/head.min.js"></script>
+    <script src="../assets/reveal/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
