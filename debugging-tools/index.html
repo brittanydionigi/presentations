@@ -16,6 +16,9 @@
 
     <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
     <link rel="stylesheet" href="../assets/reveal/css/theme/b-and-w.css" id="theme">
+    <style type="text/css">
+      div.reveal h1 { font-size: 86px !important; }
+    </style>
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
@@ -37,7 +40,7 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Extending DevTools for Custom Debugging</h1>
+          <h1>Extending DevTools for<br />Custom Debugging</h1>
           <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
@@ -63,9 +66,12 @@
         <section>
           <h2>Links & Such</h2>
           <ul>
-            <li><a href="#">Beep boop</a></li>
-            <li><a href="#">Beep boop</a></li>
-            <li><a href="#">Beep boop</a></li>
+            <li><a href="https://developer.chrome.com/extensions/overview">Overview on Chrome Extensions</a></li>
+            <li><a href="https://developer.chrome.com/extensions/devtools">Extending DevTools Documentation</a></li>
+            <li><a href="#">Batarang | Ember Inspector | React Dev Tools | Backbone Debugger</a></li>
+            <li><a href="#">/brittanystoroz</a> (me, everywhere)</li>
+            <li><a href="http://brittanystoroz.github.io/presentations/debugging-tools/index.html">brittanystoroz.github.io/presentations/debugging-tools/</a></li>
+            <li><a href="#">VooDoo BlackMagic Debugger</li>
           </ul>
         </section>
 
@@ -84,7 +90,7 @@
         controls: true,
         progress: true,
         history: true,
-        center: false,
+        center: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
