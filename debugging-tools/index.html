@@ -46,21 +46,30 @@
         </section>
         <section>
           <h2>There's a panel for that.</h2>
-          <p>Beep boop.</p>
+          <aside class="notes">
+            <p>So you know these are the top-guns in client-side javascript. All of these frameworks having custom debugging tools emphasizes the fact that these are not just a nice-to-have, they hold a lot more weight than that. So if you're planning on open-sourcing something, or maybe you use some custom framework at your job, it's good to know how to build these. Not only is it going to help new developers understand your framework's intentions, it will also expose any weaknesses that your codebase might have. For example if there's a really harsh performance issue with a certain implementation of a feature, you're going to see it right away in a nice debugging GUI.</p>
+            <p>So let's hook in our own panel real quick. [ manifest, panel, show panel without voodoo app, show panel with voodoo app ]</p>
+            <p>And here's our panel - it's just a regular HTML file and we can include whatever JavaScript libs we want here.
+            <p>But how does it get that information? Let's take a look at the structure of these extensions to find out.</p>
+          </aside>
         </section>
 
         <section>
-          <h2>What to provide</h2>
-          <ul>
-            <li class="fragment">state of MVC</li>
-            <li class="fragment">performance monitoring</li>
-            <li class="fragment">info/deps</li>
-          </ul>
+          <h2>The Structure</h2>
+          [ create graphic ]
+          <aside class="notes">
+            <p>Three main pieces you're going to want to set up. We have our devtools page which we just set up to create our panel, we're going to have a background page - which is going to be used as an intermediary to relay messages between our dev tools page and any content scripts we might have. Content scripts can run in the context of the inspected window which gives us access to the DOM and what else we might need from the application we're debugging.</p>
+          </aside>
         </section>
 
         <section>
-          <h2>THE API</h2>
-          <p>Beep boop</p>
+          <h2>Opening Lines of Communication</h2>
+          <aside class="notes">
+            <p>We want to create a long-lived connection with our background page - we're going to be interacting with the application and testing out different parts. So instead of sending a single message back and forth, we can call chrome.runtime.connect or tabs.connect to establish a channel for communication. So if we go back to that callback we wrote after creating our panel, that's exactly where we're setting up this connection with the background page.</p>
+            <p>Our background page is going to keep track of any open connections for us and also set up some listeners so it can properly route any incoming messages.</p>
+            <p>So let's quickly run through an example of communicating from our devtools panel to our inspected page. [ demo checkbox click from dt panel to views outline ]</p>
+            <p>Ok, and now we also want to make sure our devtools panel stays in sync with any changes we make in the application. [ demo adding a view and having the panel update ]</p>
+          </aside>
         </section>
 
         <section>
@@ -68,7 +77,7 @@
           <ul>
             <li><a href="https://developer.chrome.com/extensions/overview">Overview on Chrome Extensions</a></li>
             <li><a href="https://developer.chrome.com/extensions/devtools">Extending DevTools Documentation</a></li>
-            <li><a href="#">Batarang | Ember Inspector | React Dev Tools | Backbone Debugger</a></li>
+            <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Batarang</a> | <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a> | <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Dev Tools</a> | <a href="https://chrome.google.com/webstore/detail/backbone-debugger/bhljhndlimiafopmmhjlgfpnnchjjbhd?hl=en">Backbone Debugger</a></li>
             <li><a href="#">/brittanystoroz</a> (me, everywhere)</li>
             <li><a href="http://brittanystoroz.github.io/presentations/debugging-tools/index.html">brittanystoroz.github.io/presentations/debugging-tools/</a></li>
             <li><a href="#">VooDoo BlackMagic Debugger</li>
