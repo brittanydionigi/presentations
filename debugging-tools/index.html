@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/reveal/css/theme/b-and-w.css" id="theme">
     <style type="text/css">
       div.reveal h1 { font-size: 86px !important; }
+      .reveal section img { box-shadow: none !important; border: 0px !important; }
     </style>
 
     <!-- For syntax highlighting -->
@@ -45,7 +46,11 @@
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
         <section>
-          <h2>There's a panel for that.</h2>
+          <h2>Not just a nice-to-have</h2>
+          <h3>whether you're open-sourcing a framework, or using a custom codebase at work</h3><br />
+          <ul>
+            <li>helps new developers understand the framework's intentions/lifecycles</li>
+            <li>exposes areas for improvement within the framework</li>
           <aside class="notes">
             <p>So you know these are the top-guns in client-side javascript. All of these frameworks having custom debugging tools emphasizes the fact that these are not just a nice-to-have, they hold a lot more weight than that. So if you're planning on open-sourcing something, or maybe you use some custom framework at your job, it's good to know how to build these. Not only is it going to help new developers understand your framework's intentions, it will also expose any weaknesses that your codebase might have. For example if there's a really harsh performance issue with a certain implementation of a feature, you're going to see it right away in a nice debugging GUI.</p>
             <p>So let's hook in our own panel real quick. [ manifest, panel, show panel without voodoo app, show panel with voodoo app ]</p>
@@ -54,12 +59,22 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background-transition="none" data-background="#fff">
           <h2>The Structure</h2>
-          [ create graphic ]
+          <img src="img/structure-1.png" />
           <aside class="notes">
             <p>Three main pieces you're going to want to set up. We have our devtools page which we just set up to create our panel, we're going to have a background page - which is going to be used as an intermediary to relay messages between our dev tools page and any content scripts we might have. Content scripts can run in the context of the inspected window which gives us access to the DOM and what else we might need from the application we're debugging.</p>
           </aside>
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>The Structure</h2>
+          <img src="img/structure-2.png" />
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>The Structure</h2>
+          <img src="img/structure-3.png" />
         </section>
 
         <section>
@@ -102,7 +117,7 @@
         center: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
 
         // Parallax scrolling
         // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
