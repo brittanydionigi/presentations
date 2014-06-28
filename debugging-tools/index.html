@@ -46,6 +46,15 @@
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
         <section>
+          <h2>DevTools Extensions</h2>
+          <ul>
+            <li>provide general page/library information</li>
+            <li>display current MVC data as it changes</li>
+            <li>track lifecycles within the framework</li>
+            <li>monitor performance of particular tasks</li>
+          </ul>
+        </section>
+        <section>
           <h2>Not just a nice-to-have</h2>
           <h3>whether you're open-sourcing a framework, or using a custom codebase at work</h3><br />
           <ul>
@@ -75,16 +84,6 @@
         <section data-background-transition="none" data-background="#fff">
           <h2>The Structure</h2>
           <img src="img/structure-3.png" />
-        </section>
-
-        <section>
-          <h2>Opening Lines of Communication</h2>
-          <aside class="notes">
-            <p>We want to create a long-lived connection with our background page - we're going to be interacting with the application and testing out different parts. So instead of sending a single message back and forth, we can call chrome.runtime.connect or tabs.connect to establish a channel for communication. So if we go back to that callback we wrote after creating our panel, that's exactly where we're setting up this connection with the background page.</p>
-            <p>Our background page is going to keep track of any open connections for us and also set up some listeners so it can properly route any incoming messages.</p>
-            <p>So let's quickly run through an example of communicating from our devtools panel to our inspected page. [ demo checkbox click from dt panel to views outline ]</p>
-            <p>Ok, and now we also want to make sure our devtools panel stays in sync with any changes we make in the application. [ demo adding a view and having the panel update ]</p>
-          </aside>
         </section>
 
         <section>
