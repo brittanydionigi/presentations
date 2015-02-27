@@ -1,6 +1,8 @@
 Presentations
 =============
 
+[Custom Applications with Ember CLI](http://brittanystoroz.github.io/presentations/embercli-fxos/index.html#/) || **EmberConf** [ march 4 2015]
+
 [Extending DevTools for Custom Debugging](http://brittanystoroz.github.io/presentations/debugging-tools/index.html#/) || **LXJS** [ june 28 2014]
 
 [Technical Writing](http://brittanystoroz.github.io/presentations/technical-writing/index.html#/) || **BrooklynJS** [ may 15 2014]
