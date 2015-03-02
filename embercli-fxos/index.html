@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
 
-    <title>Building Custom Applications with Ember CLI</title>
+    <title>Building Applications for Custom Environments with Ember CLI</title>
 
-    <meta name="description" content="Building Custom Applications with Ember CLI">
+    <meta name="description" content="Building Applications for Custom Environments with Ember CLI">
 
     <meta name="author" content="Brittany Storoz">
 
@@ -49,55 +49,63 @@
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
         <section>
-          <h2>Custom Debuggers</h2>
+          <h2>Ember-CLI Intro</h2>
           <ul>
-            <li>provide general page/library information</li>
-            <li>display current MVC data as it changes</li>
-            <li>track lifecycles within the framework</li>
-            <li>monitor performance of particular tasks</li>
+            <li>no good rails equivalent for JS until Ember-CLI</li>
+            <li>tried filling that void in tech stack</li>
+            <li>looked to ember-cli for solutions</li>
+            <li>killed our project & joined forces w/ ember-cli</li>
           </ul>
         </section>
         <section>
-          <h2>Not just a nice-to-have</h2>
-          <h3>whether you're open-sourcing a framework, or using a custom codebase at work</h3><br />
+          <h2>What were our needs?</h2>
+          <h3>Firefox OS Requirements</h3><br />
           <ul>
-            <li>helps new developers understand the framework's intentions/lifecycles</li>
-            <li>exposes areas for improvement within the framework</li>
+            <li>generate & validate a manifest file</li>
+            <li>UI components to mimic OS interface</li>
+            <li>publish to marketplace</li>
+          </ul>
           <aside class="notes">
-            <p>So you know these are the top-guns in client-side javascript. All of these frameworks having custom debugging tools emphasizes the fact that these are not just a nice-to-have, they hold a lot more weight than that. So if you're planning on open-sourcing something, or maybe you use some custom framework at your job, it's good to know how to build these. Not only is it going to help new developers understand your framework's intentions, it will also expose any weaknesses that your codebase might have. For example if there's a really harsh performance issue with a certain implementation of a feature, you're going to see it right away in a nice debugging GUI.</p>
-            <p>So let's hook in our own panel real quick. [ manifest, panel, show panel without voodoo app, show panel with voodoo app ]</p>
-            <p>And here's our panel - it's just a regular HTML file and we can include whatever JavaScript libs we want here.
-            <p>But how does it get that information? Let's take a look at the structure of these extensions to find out.</p>
+            <p></p>
           </aside>
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>The Structure</h2>
-          <img src="img/structure-1.png" />
+          <h2>Addon Use Cases</h2>
+          <ul>
+            <li>adding content to applications</li>
+            <li>merging a custom directory structure</li>
+            <li>pre/post processing</li>
+          </ul>
           <aside class="notes">
-            <p>Three main pieces you're going to want to set up. We have our devtools page which we just set up to create our panel, we're going to have a background page - which is going to be used as an intermediary to relay messages between our dev tools page and any content scripts we might have. Content scripts can run in the context of the inspected window which gives us access to the DOM and what else we might need from the application we're debugging.</p>
+            <p></p>
           </aside>
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>The Structure</h2>
-          <img src="img/structure-2.png" />
+          <h2>The Manifest File:</h2>
+          <h3>Generating Blueprints</h3>
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>The Structure</h2>
-          <img src="img/structure-3.png" />
+          <h2>FxOS UI Widgets:</h2>
+          <h3>Building Components</h3>
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>Publishing to Marketplace:</h2>
+          <h3>Creating Commands</h3>
         </section>
 
         <section>
           <h2>Links & Docs</h2>
           <ul>
-            <li><a href="https://developer.chrome.com/extensions/overview">Overview on Chrome Extensions</a></li>
-            <li><a href="https://developer.chrome.com/extensions/devtools">Extending DevTools Documentation</a></li>
-            <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Batarang</a> | <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a> | <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Dev Tools</a> | <a href="https://chrome.google.com/webstore/detail/backbone-debugger/bhljhndlimiafopmmhjlgfpnnchjjbhd?hl=en">Backbone Debugger</a></li>
+            <li><a href="http://www.ember-cli.com/">Ember CLI Documentation</a></li>
+            <li><a href="https://github.com/poetic/ember-cli-cordova">Cordova Addon</a></li>
+            <li><a href="https://github.com/mozilla/ember-cli-fxos">ember-cli-fxos addon</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/Apps">MDN App Center</a></li>
             <li><a href="#">/brittanystoroz</a> (me, everywhere)</li>
-            <li><a href="http://brittanystoroz.github.io/presentations/debugging-tools/index.html">brittanystoroz.github.io/presentations/debugging-tools/</a></li>
-            <li><a href="#">VooDoo BlackMagic Debugger</li>
+            <li><a href="http://brittanystoroz.github.io/presentations/embercli-fxos/index.html">brittanystoroz.github.io/presentations/embercli-fxos/</a></li>
           </ul>
         </section>
 
