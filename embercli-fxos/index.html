@@ -21,10 +21,12 @@
     <style type="text/css">
       div.reveal h1 { font-size: 72px !important; }
       .reveal section img { box-shadow: none !important; border: 0px !important; }
+      span.custom-code { display: block; font-family: monospace; }
+      span.green { color: #18A218; }
     </style>
 
     <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="../assets/reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="../assets/reveal/lib/css/solarized_light.css">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -49,12 +51,21 @@
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
         <section>
+          <h2><img src="img/recroom.png" /></h2>
+        </section>
+        <section>
+          <h2>maybe you should stop <img src="img/maybe-you-should-stop.jpeg" /></h2>
+        </section>
+        <section>
+          <h2><img src="img/so-we-did.png" /></h2>
+        </section>
+        <section>
           <h2>What were our needs?</h2>
           <h3>Firefox OS Requirements</h3><br />
           <ul>
-            <li>generate & validate a manifest file</li>
-            <li>UI components that mimic OS interface</li>
-            <li>publish to marketplace</li>
+            <li class="fragment">generate & validate a manifest file</li>
+            <li class="fragment">UI components that mimic OS interface</li>
+            <li class="fragment">publish to marketplace</li>
           </ul>
           <aside class="notes">
             <p></p>
@@ -64,8 +75,13 @@
         <section data-background-transition="none" data-background="#fff">
           <h2>Ember CLI Addons</h2>
           <ul>
-            <li>extend ember-cli beyond core functionality</li>
-            <li>simply npm packages that follow npm conventions</li>
+            <li class="fragment">extend ember-cli beyond core functionality</li>
+            <li class="fragment">follow standard npm conventions</li>
+            <li class="fragment">easy to create & install<br /><br />
+              <span class="custom-code fragment">ember addon <span class="green">name-of-your-addon</span></span><br />
+              <span class="custom-code fragment">ember install:addon <span class="green">name-of-your-addon</span></span>
+            </li>
+          </section>
           </ul>
           <aside class="notes">
             <p></p>
@@ -98,7 +114,7 @@
           <ul>
             <li><a href="https://github.com/mozilla/ember-cli-fxos">ember-cli-fxos addon</a></li>
             <li><a href="https://developer.mozilla.org/en-US/Apps">MDN App Center</a></li>
-            <li><a href="#">IRC: #apps Mozilla</a></li>
+            <li><a href="#">IRC: mozilla.org #apps</a></li>
           </ul>
           <ul>
             <li><a href="#">/brittanystoroz</a> (me, everywhere)</li>

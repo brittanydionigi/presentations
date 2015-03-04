@@ -322,7 +322,7 @@ body {
 	margin: 15px auto;
 
 	text-align: left;
-	font-size: 0.55em;
+	font-size: 1.55em;
 	font-family: monospace;
 	line-height: 1.2em;
 
@@ -332,6 +332,7 @@ body {
 }
 .reveal code {
 	font-family: monospace;
+	font-size: 1.55em;
 }
 .reveal pre code {
 	padding: 5px;
