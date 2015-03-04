@@ -24,6 +24,7 @@
       span.custom-code { display: block; font-family: monospace; }
       span.green { color: #18A218; }
       span.grey { color: #999; }
+      span.sml { font-size: 80%; margin-bottom: 3%; }
 
       #links-slide p { text-align: left; }
     </style>
@@ -104,6 +105,26 @@
           <ul>
             <li class="fragment"><span class="custom-code">bower install <span class="green">gaia-components/gaia-tabs</span></span></li>
             <li class="fragment">2-step process:<br /><br /><span class="fragment">a. including dependencies and creating the addon</span><br /><span class="fragment">b. making them available to the consuming application</span></li>
+          </ul>
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>Components cntd.</h2>
+          <h3>Dependencies:</h3>
+          <ul>
+          <li>bower install within addon</li>
+          <li>bower install within consuming application<br /> <span class="sml">(<span class="green">blueprint/ember-cli-fxos/index.js</span> <b>afterInstall()</b>)</span></li>
+          <li>include dependency files<br /><span class="sml">(<span class="green">index.js</span> <b>included</b> hook)</span></li>
+          </ul>
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>Components cntd.</h2>
+          <h3>Component logic:</h3>
+          <ul>
+          <li>create component<br /> <span class="sml">(<span class="green">addon/components/gaia-tabs.js</span>)</span></li>
+          <li>export component to consuming application<br /> <span class="sml">(<span class="green">app/components/gaia-tabs.js</span>)</span></li>
+          <li>define component template<br /><span class="sml">(<span class="green">app/templates/components/gaia-tabs.js</span>)</span></li>
           </ul>
         </section>
 
