@@ -23,6 +23,9 @@
       .reveal section img { box-shadow: none !important; border: 0px !important; }
       span.custom-code { display: block; font-family: monospace; }
       span.green { color: #18A218; }
+      span.grey { color: #999; }
+
+      #links-slide p { text-align: left; }
     </style>
 
     <!-- For syntax highlighting -->
@@ -89,36 +92,41 @@
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>The Manifest File:</h2>
-          <h3>Generating Blueprints</h3>
+          <h2>Generating The Manifest:</h2>
+          <h3>Creating Blueprints</h3>
+          <ul>
+            <li class="fragment">rules for generating common code and file structures<br /><br /><span class="custom-code fragment">ember generate blueprint <span class="green">name-of-blueprint</span></span></li>
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>FxOS UI Widgets:</h2>
+          <h2>FxOS UI (Gaia):</h2>
           <h3>Building Components</h3>
+          <ul>
+            <li class="fragment"><span class="custom-code">bower install <span class="green">gaia-components/gaia-tabs</span></span></li>
+            <li class="fragment">2-step process:<br /><br /><span class="fragment">a. including dependencies and creating the addon</span><br /><span class="fragment">b. making them available to the consuming application</span></li>
+          </ul>
         </section>
 
         <section data-background-transition="none" data-background="#fff">
-          <h2>Publishing to Marketplace:</h2>
-          <h3>Creating Commands</h3>
+          <h2>Validation & Publishing:</h2>
+          <h3>Adding Commands</h3>
+          <ul>
+            <li class="fragment">want control over when these things happen<br /><br /><span class="custom-code fragment">ember fxos:validate <span class="green">options</span></span><br /><span class="custom-code fragment">ember fxos:publish <span class="green">options</span></span></li>
+          </ul>
         </section>
 
-        <section>
+        <section id="links-slide">
           <h2>Links & Docs</h2>
           <p>Ember CLI & Addons++</p>
-          <ul>
-            <li><a href="http://www.ember-cli.com/">Ember CLI Documentation</a></li>
-            <li><a href="https://github.com/poetic/ember-cli-cordova">Cordova Addon</a></li>
-          </ul>
+          <p><a href="http://www.ember-cli.com/">Ember CLI Documentation</a><br />
+          <span class="grey">Example Addons: </span><a href="https://github.com/poetic/ember-cli-cordova">Cordova</a> || <a href="https://github.com/edgycircle/ember-pikaday">Pikaday</a> || <a href="https://github.com/stefanpenner/ember-moment">Moment</a></p>
+          <br />
           <p>Firefox OS Apps++</p>
-          <ul>
-            <li><a href="https://github.com/mozilla/ember-cli-fxos">ember-cli-fxos addon</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/Apps">MDN App Center</a></li>
-            <li><a href="#">IRC: mozilla.org #apps</a></li>
-          </ul>
-          <ul>
-            <li><a href="#">/brittanystoroz</a> (me, everywhere)</li>
-            <li><a href="http://brittanystoroz.github.io/presentations/embercli-fxos/index.html">brittanystoroz.github.io/presentations/embercli-fxos/</a></li>
+          <p><a href="https://github.com/mozilla/ember-cli-fxos">ember-cli-fxos addon</a> || <a href="https://developer.mozilla.org/en-US/Apps">MDN App Center</a> || <a href="#">irc.mozilla.org #apps</a></p>
+          <br />
+          <p>Me++</p>
+          <p><a href="#">/brittanystoroz</a> (me, everywhere)<br />
+          <a href="http://brittanystoroz.github.io/presentations/embercli-fxos/index.html">brittanystoroz.github.io/presentations/embercli-fxos/</a></p>
           </ul>
           </ul>
         </section>
