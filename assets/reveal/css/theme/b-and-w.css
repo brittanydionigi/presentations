@@ -49,6 +49,7 @@ body { background-color: #fff; }
 .reveal h1 { font-weight: 700; margin-bottom: 50px; font-size: 100px; }
 .reveal h2 { font-weight: 700; }
 .reveal h3 { font-style: italic; font-weight: 300; margin-top: 30px; font-size: 1.45em; }
+.reveal h5 { font-style: italic; font-weight: 300; margin-top: 30px; font-size: 1.1em; }
 
 .reveal ul { list-style-type: square; margin-top: 10px; }
 .reveal ul li { margin-bottom: 10px; }

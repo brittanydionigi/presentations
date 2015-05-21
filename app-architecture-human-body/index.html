@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../assets/reveal/css/theme/b-and-w.css" id="theme">
     <style type="text/css">
       div.reveal h1 { font-size: 72px !important; }
+      div.reveal h2 { font-size: 48px !important; }
       .reveal section img { box-shadow: none !important; border: 0px !important; }
       span.custom-code { display: block; font-family: monospace; }
       span.green { color: #18A218; }
@@ -49,114 +50,120 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h2>Intelligent Design</h2>
+          <h2>Intelligent Design:</h2>
           <h1>Application Architecture<br />of the Human Body</h1><br />
           <h4><b>Brittany Storoz || Apps Engineering @ Mozilla</b></h4>
-          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p>
-          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
+          <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p>
+          <p><b>Github</b> | <a href="https://github.com/brittanystoroz">brittanystoroz/presentations</a></p><br />
         </section>
         <section>
-          <h1>Ember CLI</h1><br />
-          <ul>
-            <li>everyone's favorite command line tool</li>
-            <li>build organized ember apps quickly</li>
-            <li>fills huge void in toolset for JS devs</li>
-          </ul>
+          <h3>We are all literally living and breathing examples of some of the best practices in software development.</h3>
         </section>
         <section>
-          <h2><img src="img/recroom.png" /></h2>
+          <img src="img/inheritance.png" />
         </section>
         <section>
-          <h2>maybe you should stop <img src="img/maybe-you-should-stop.jpeg" /></h2>
+          <h3>"stop making everything so confusing...and ignore my old presentations when I used these analogies." <br />-- Alex Sexton</h3>
         </section>
         <section>
-          <h2><img src="img/so-we-did.png" /></h2>
+          <img src="img/quora.png" />
         </section>
         <section>
-          <h2>What were our needs?</h2>
-          <h3>Firefox OS Requirements</h3><br />
-          <ul>
-            <li class="fragment">generate & validate a manifest file</li>
-            <li class="fragment">UI components that mimic OS interface</li>
-            <li class="fragment">publish to marketplace</li>
-          </ul>
-          <aside class="notes">
-            <p></p>
-          </aside>
-        </section>
-
-        <section data-background-transition="none" data-background="#fff">
-          <h2>Ember CLI Addons</h2>
-          <ul>
-            <li class="fragment">extend ember-cli beyond core functionality</li>
-            <li class="fragment">follow standard npm conventions</li>
-            <li class="fragment">easy to create & install<br /><br />
-              <span class="custom-code fragment">ember addon <span class="green">name-of-your-addon</span></span><br />
-              <span class="custom-code fragment">ember install:addon <span class="green">name-of-your-addon</span></span>
-            </li>
+          <section>
+            <h1>Signs of a Healthy Architecture</h1>
+            <h5>Healthy architectures produce applications that are: </h5><br />
+            <p><b>RELIABLE. </b> app behaves in an expected manner</p>
+            <ul>
+              <li class="fragment">have no single point of failure</li>
+              <li class="fragment">autonomic; knows how to handle & recover from errors</li>
+            </ul>
           </section>
-          </ul>
-          <aside class="notes">
-            <p></p>
-          </aside>
         </section>
-
-        <section data-background-transition="none" data-background="#fff">
-          <h2>Generating The Manifest:</h2>
-          <h3>Creating Blueprints</h3>
+        <section>
+          <h1>Signs of a Healthy Architecture</h1>
+          <h5>Healthy architectures produce applications that are: </h5><br />
+          <p><b>FLEXIBLE.</b> easy adaptation to changing circumstances</p>
           <ul>
-            <li class="fragment">rules for generating common code and file structures<br /><br /><span class="custom-code fragment">ember generate blueprint <span class="green">name-of-blueprint</span></span></li>
-        </section>
-
-        <section data-background-transition="none" data-background="#fff">
-          <h2>FxOS UI (Gaia):</h2>
-          <h3>Building Components</h3>
-          <ul>
-            <li class="fragment"><span class="custom-code">bower install <span class="green">gaia-components/gaia-tabs</span></span></li>
-            <li class="fragment">2 responsibilities:<br /><br /><span class="fragment">a. including dependencies and creating the component</span><br /><span class="fragment">b. making both available to the consuming application</span></li>
+            <li class="fragment">adjust behavior for different environments to work as expected (i.e. various browsers/platforms)</li>
+            <li class="fragment">easy to iterate on when developers must change core logic</li>
           </ul>
         </section>
-
-        <section data-background-transition="none" data-background="#fff">
-          <h2>Components Review</h2>
-          <h3>Dependencies:</h3>
+        <section>
+          <h1>Signs of a Healthy Architecture</h1>
+          <h5>Healthy architectures produce applications that are: </h5><br />
+          <p><b>TESTABLE.</b> parts of an application can be tested as independent units</p>
           <ul>
-          <li class="fragment">bower install within addon</li>
-          <li class="fragment">bower install within consuming application<br /> <span class="sml">(<span class="green">blueprint/ember-cli-fxos/index.js</span> <b>afterInstall()</b>)</span></li>
-          <li class="fragment">include dependency files<br /><span class="sml">(<span class="green">index.js</span> <b>included</b> hook)</span></li>
+            <li class="fragment">prevents us from breaking functionality</li>
+            <li class="fragment">makes it easier to track down and troubleshoot errors when they do occur</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Architectural Affairs</h1><br />
+          <ul>
+            <li><b>separation of concerns.</b> <span class="fragment">application responsibilities are organized into separate layers that overlap as little as possible</span></li>
+          </ul>
+        </section>
+        <section>
+          <img class="fragment" src="img/skelatal.png" />
+          <img class="fragment" src="img/muscular.png" />
+          <img class="fragment" src="img/cardiovascular.png" />
+          <img class="fragment" src="img/digestive.png" />
+          <img class="fragment" src="img/respitory.png" />
+          <img class="fragment" src="img/lymphatic.png" />
+        </section>
+        <section>
+          <h1>Architectural Affairs</h1><br />
+          <ul>
+            <li><b>single responsibility.</b> <span class="fragment">each module serves a single purpose / provides specific functionality</span></li>
+            <li><b>least knowledge.</b> <span class="fragment">each module is as unaware as possible of the inner workings of other parts of the application</span></li>
+            <li><b>standard interface for communication.</b> <span class="fragment">a consistent and predictable interface allows loosely-coupled modules to interact with one another</span></li>
+          </ul>
+        </section>
+        <section>
+          <h3>"We want a loosely coupled architecture with functionality broken down into independent modules with ideally no inter-module dependencies. Modules speak to the rest of the application when something interesting happens and an intermediate layer interprets and reacts to these messages." -- Addy Osmani</h3>
+        </section>
+        <section>
+          <h3>"Decouple app. architecture w/<b>module</b>,<b>facade</b> & <b>mediator</b> patterns. Mods publish msgs, mediator acts as pub/sub mgr & facade handles security" <br />-- Addy Osmani</h3>
+        </section>
+
+        <section>
+          <h1>Design Patterns to Address Architectural Concerns</h1>
+          <h3>The Mediator</h3>
+          <ul>
+            <li class="fragment">publish/subscribe pattern that sends & receives messages with a common data model</li>
+            <li class="fragment">encapsulates how different parts of an application interact</li>
+            <li class="fragment">central point of control</li>
           </ul>
         </section>
 
-        <section data-background-transition="none" data-background="#fff">
-          <h2>Components Review</h2>
-          <h3>Component logic:</h3>
+        <section>
+          <h1>Design Patterns to Address Architectural Concerns</h1>
+          <h3>The Facade</h3>
           <ul>
-          <li class="fragment">create component<br /> <span class="sml">(<span class="green">addon/components/gaia-tabs.js</span>)</span></li>
-          <li class="fragment">export component to consuming application<br /> <span class="sml">(<span class="green">app/components/gaia-tabs.js</span>)</span></li>
-          <li class="fragment">define component template<br /><span class="sml">(<span class="green">app/templates/components/gaia-tabs.js</span>)</span></li>
+            <li class="fragment">abstraction layer between mediator & modules</li>
+            <li class="fragment">provides a consistent & predictable interface for modules to interact with</li>
+            <li class="fragment">only part of the application that modules must be aware of (ideally)</li>
           </ul>
         </section>
 
-        <section data-background-transition="none" data-background="#fff">
-          <h2>Validation & Publishing:</h2>
-          <h3>Adding Commands</h3>
+        <section>
+          <h1>Architectural Pros & Cons</h1>
           <ul>
-            <li class="fragment">want control over when these things happen<br /><br /><span class="custom-code fragment">ember fxos:validate <span class="green">options</span></span><br /><span class="custom-code fragment">ember fxos:publish <span class="green">options</span></span></li>
+            <li><b>advantage: </b> modules can broadcast or listen for messages with no concern for the rest of the system; single connection to a mediator rather than multiple connections to each other; if one system is damaged it doesn't necessarily mean others are</li>
+            <li><b>disadvantage:</b> difficult to gracefully recover from damage to the mediator</li>
           </ul>
         </section>
 
         <section id="links-slide">
           <h2>Links & Docs</h2>
-          <p>Ember CLI & Addons++</p>
-          <p><a href="http://www.ember-cli.com/">Ember CLI Documentation</a><br />
-          <span class="grey">Example Addons: </span><a href="https://github.com/poetic/ember-cli-cordova">Cordova</a> || <a href="https://github.com/edgycircle/ember-pikaday">Pikaday</a> || <a href="https://github.com/stefanpenner/ember-moment">Moment</a></p>
-          <br />
-          <p>Firefox OS Apps++</p>
-          <p><a href="https://github.com/mozilla/ember-cli-fxos">ember-cli-fxos addon</a> || <a href="https://developer.mozilla.org/en-US/Apps">MDN App Center</a> || <a href="#">irc.mozilla.org #apps</a></p>
+          <p>Design & Architecture++</p>
+          <p><a href="http://addyosmani.com/largescalejavascript/">Large Scale JavaScript<br /><span class="grey">Addy Osmani</span></a><br /></p>
+          <p><a href="http://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420">Patterns of Enterprise Application Architecture<br /><span class="grey">Martin Fowler</span></a><br /></p>
+          <p><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning JavaScript Design Patterns<br /><span class="grey">Addy Osmani</span></a><br /></p>
           <br />
           <p>Me++</p>
           <p><a href="#">/brittanystoroz</a> (me, everywhere)<br />
-          <a href="http://brittanystoroz.github.io/presentations/embercli-fxos/index.html">brittanystoroz.github.io/presentations/embercli-fxos/</a></p>
+          <a href="http://brittanystoroz.github.io/presentations/">brittanystoroz.github.io/presentations/</a></p>
           </ul>
           </ul>
         </section>
