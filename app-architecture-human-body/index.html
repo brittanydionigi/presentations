@@ -28,6 +28,9 @@
       span.sml { font-size: 80%; margin-bottom: 3%; }
 
       #links-slide p { text-align: left; }
+
+      .float-left { float: left; display: inline-block; width: 40%; }
+      .float-right { float: right; display: inline-block; width: 50%; }
     </style>
 
     <!-- For syntax highlighting -->
@@ -72,7 +75,7 @@
           <section>
             <h1>Signs of a Healthy Architecture</h1>
             <h5>Healthy architectures produce applications that are: </h5><br />
-            <p><b>RELIABLE. </b> app behaves in an expected manner</p>
+            <p><b>RELIABLE. &nbsp;&nbsp;</b> <span class="tiny-gray">app behaves in an expected manner</span></p>
             <ul>
               <li class="fragment">have no single point of failure</li>
               <li class="fragment">autonomic; knows how to handle & recover from errors</li>
@@ -82,42 +85,52 @@
         <section>
           <h1>Signs of a Healthy Architecture</h1>
           <h5>Healthy architectures produce applications that are: </h5><br />
-          <p><b>FLEXIBLE.</b> easy adaptation to changing circumstances</p>
+          <p><b>FLEXIBLE. &nbsp;&nbsp;</b> <span class="tiny-gray">easy adaptation to changing circumstances</span></p>
           <ul>
-            <li class="fragment">adjust behavior for different environments to work as expected (i.e. various browsers/platforms)</li>
-            <li class="fragment">easy to iterate on when developers must change core logic</li>
+            <li class="fragment">adjust behavior for different environments to work as expected (i.e. various browsers/platforms); <i>responding to external conditions</i></li>
+            <li class="fragment">easy to iterate on when developers must change core logic; <i>gracefully accomodates internal changes</i></li>
           </ul>
         </section>
         <section>
           <h1>Signs of a Healthy Architecture</h1>
           <h5>Healthy architectures produce applications that are: </h5><br />
-          <p><b>TESTABLE.</b> parts of an application can be tested as independent units</p>
+          <p><b>TESTABLE. &nbsp;&nbsp;</b> <span class="tiny-gray">parts can be tested as independent units</span></p>
           <ul>
             <li class="fragment">prevents us from breaking functionality</li>
             <li class="fragment">makes it easier to track down and troubleshoot errors when they do occur</li>
           </ul>
         </section>
         <section>
-          <h1>Architectural Affairs</h1><br />
-          <ul>
-            <li><b>separation of concerns.</b> <span class="fragment">application responsibilities are organized into separate layers that overlap as little as possible</span></li>
-          </ul>
+          <h1>Architectural Matters</h1>
+          <h3>separation of concerns.</h3><br />
+          <p>application responsibilities are organized into separate<br /> layers that overlap as little as possible</p>
         </section>
         <section>
-          <img class="fragment" src="img/skelatal.png" />
-          <img class="fragment" src="img/muscular.png" />
-          <img class="fragment" src="img/cardiovascular.png" />
-          <img class="fragment" src="img/digestive.png" />
-          <img class="fragment" src="img/respitory.png" />
-          <img class="fragment" src="img/lymphatic.png" />
+          <img class="fragment body-system" src="img/skelatal.png" />
+          <img class="fragment body-system" src="img/muscular.png" />
+          <img class="fragment body-system" src="img/cardiovascular.png" />
+          <img class="fragment body-system" src="img/digestive.png" />
+          <img class="fragment body-system" src="img/respitory.png" />
+          <img class="fragment body-system" src="img/lymphatic.png" />
+          <img class="fragment body-system" src="img/endocrine.png" />
+          <img class="fragment body-system" src="img/nervous.png" />
+          <img class="fragment body-system" src="img/urinary.png" />
         </section>
         <section>
-          <h1>Architectural Affairs</h1><br />
-          <ul>
-            <li><b>single responsibility.</b> <span class="fragment">each module serves a single purpose / provides specific functionality</span></li>
-            <li><b>least knowledge.</b> <span class="fragment">each module is as unaware as possible of the inner workings of other parts of the application</span></li>
-            <li><b>standard interface for communication.</b> <span class="fragment">a consistent and predictable interface allows loosely-coupled modules to interact with one another</span></li>
-          </ul>
+          <h1>Architectural Affairs</h1>
+          <h3>single responsibility & least knowledge</h3><br />
+          <p>each module serves a single purpose and</p>
+          <p>knows as little as possible about other application parts</p>
+          <p>both support reusability</p>
+        </section>
+        <section>
+          <h1>Architectural Affairs</h1>
+          <h3>standard interface for communication.</h3><br />
+          <p>a consistent and predictable interface allows loosely-coupled modules to interact with one another</p>
+        </section>
+        <section>
+          <img class="float-left" style="width: 60%; margin-top: 7%" src="img/neuron.jpg" />
+          <img class="float-right" style="width: 40%" src="img/neurotransmitter.png" />
         </section>
         <section>
           <h3>"We want a loosely coupled architecture with functionality broken down into independent modules with ideally no inter-module dependencies. Modules speak to the rest of the application when something interesting happens and an intermediate layer interprets and reacts to these messages." -- Addy Osmani</h3>
@@ -137,6 +150,17 @@
         </section>
 
         <section>
+          <h1>The Mediator</h1>
+          <h3>Central Nervous System (CNS)</h3>
+          <img src="img/cns.jpg" class="float-left" />
+          <ul class="float-right">
+            <li>composed of the brain & spinal cord</li>
+            <li>constantly processing information to excite/inhibit behavior</li>
+            <li>acts as a mediator for all systems to communicate with each other</li>
+          </ul>
+        </section>
+
+        <section>
           <h1>Design Patterns to Address Architectural Concerns</h1>
           <h3>The Facade</h3>
           <ul>
@@ -147,10 +171,21 @@
         </section>
 
         <section>
-          <h1>Architectural Pros & Cons</h1>
+          <h1>The Facade</h1>
+          <h3>Peripheral Nervous System (PNS)</h3>
+          <img src="img/pns.png" class="float-left" style="width: 55%" />
+          <ul class="float-right" style="width: 40%">
+            <li>composed of nerves and glial cells</li>
+            <li>that send & receive chemical transmissions between CNS-body</li>
+            <li>CNS can process this type of message & provide feedback if necessary</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Architectural Pros & Cons</h1><br />
           <ul>
-            <li><b>advantage: </b> modules can broadcast or listen for messages with no concern for the rest of the system; single connection to a mediator rather than multiple connections to each other; if one system is damaged it doesn't necessarily mean others are</li>
-            <li><b>disadvantage:</b> difficult to gracefully recover from damage to the mediator</li>
+            <li class="fragment"><b>advantage: </b> modules can broadcast or listen for messages with no concern for the rest of the system; single connection to a mediator rather than multiple connections to each other; if one system is damaged it doesn't necessarily mean others are</li>
+            <li class="fragment"><b>disadvantage:</b> difficult to gracefully recover from damage to the mediator</li>
           </ul>
         </section>
 
