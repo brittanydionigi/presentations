@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+
+    <title>Service Workers</title>
+
+    <meta name="description" content="Service Workers">
+
+    <meta name="author" content="Brittany Storoz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../assets/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/reveal/css/theme/b-and-w.css" id="theme">
+    <style type="text/css">
+      div.reveal h1 { font-size: 72px !important; }
+      .reveal section img { box-shadow: none !important; border: 0px !important; }
+      span.custom-code { display: block; font-family: monospace; }
+      span.green { color: #18A218; }
+      span.grey { color: #999; }
+      span.sml { font-size: 80%; margin-bottom: 3%; }
+      span.yellow-highlight, h3.yellow-highlight { color: #FF002D; }
+
+      #links-slide p { text-align: left; }
+    </style>
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../assets/reveal/lib/css/solarized_light.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="../assets/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../assets/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Service workers</h1>
+          <h3 class="yellow-highlight fragment">Awwww yisssss</h3>
+        </section>
+        <section>
+          <h2>Why so excited?</h2>
+            <ul>
+              <li class="fragment">offlining applications</li>
+              <li class="fragment">push notifications</li>
+              <li class="fragment">background data sync</li>
+            </ul>
+        </section>
+        <section>
+          <h3>A service worker is an event-driven <br />web worker that enables apps to make use of persistent background processing and provide usable offline experiences.</h3>
+        </section>
+        <section>
+          <h3>A service worker is an event-driven <br />web worker that <span class="yellow-highlight">enables apps to make use of persistent background processing and provide usable offline experiences</span>.</h3>
+        </section>
+        <section>
+          <h3>A service worker is an event-driven <br /><span class="yellow-highlight">web worker</span> that enables apps to make use of persistent background processing and provide usable offline experiences.</h3>
+        </section>
+        <section>
+          <h2>Workers</h2>
+          <img class="fragment" src="img/workers-1.png" />
+        </section>
+        <section>
+          <h2>Workers</h2>
+          <img src="img/workers-2.png" />
+        </section>
+        <section>
+          <h2>Workers</h2>
+          <img src="img/workers-3.png" />
+        </section>
+        <section>
+          <h2>Workers</h2>
+          <img src="img/workers-4.png" />
+        </section>
+        <section>
+          <h2>Workers</h2>
+          <img src="img/workers-5.png" />
+        </section>
+        <section>
+          <h3>A service worker is an <span class="yellow-highlight">event-driven</span> <br />web worker that enables apps to make use of persistent background processing and provide usable offline experiences.</h3>
+        </section>
+        <section>
+          <h3>event-driven service workers...</h3><br />
+          <ul>
+            <li>are activated and kept alive by their relationship to <b>events</b> - not documents</li>
+            <li>are consulted whenever navigations <i>(network events)</i> occur within the origin it is registered on</li>
+            <li>can receive request events & modify their responses to override defaults</li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/sw-position.png" />
+          <h3 class="fragment">...it's kinda like you're running a <br />proxy server on the client <span class="fragment">o_O</span></h3>
+        </section>
+
+        
+        <section id="links-slide">
+          <h2>Links & Resources</h2>
+          <p><br /><a href="https://github.com/slightlyoff/ServiceWorker">Service workers spec on github</a><br />
+          <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/#">Service workers draft spec</a><br /><br />
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API/Using_Service_Workers">MDN Using Service workers</a><br />
+          <a href="https://jakearchibald.github.io/isserviceworkerready/resources.html">Is Service workers Ready</a><br />
+          <a href="https://github.com/w3c-webmob/ServiceWorkersDemos">Service workers demos</a><br /><br />
+          <a href="https://github.com/gaia-components/serviceworkerware">Serviceworkerware</a><br />
+          <a href="https://github.com/lodr/offliner">Offliner</a><br /><br />
+          <a href="#">irc.mozilla.org #content</a></p>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../assets/reveal/lib/js/head.min.js"></script>
+    <script src="../assets/reveal/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../assets/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../assets/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
