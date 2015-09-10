@@ -1,6 +1,8 @@
 Presentations
 =============
 
+[Understanding Service Workers](http://brittanystoroz.github.io/presentations/service-workers/#/) || **Whistler Work Week** [ june 26 2015]
+
 [Intelligent Design: Application Architecture of the Human Body](http://brittanystoroz.github.io/presentations/app-architecture-human-body/index.html#/) || **Web Rebels** [ may 22 2015]
 
 [Building Apps for Custom Environments with Ember CLI](http://brittanystoroz.github.io/presentations/embercli-fxos/index.html#/) || **EmberConf** [ march 4 2015]
