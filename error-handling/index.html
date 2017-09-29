@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
 
-    <title>Comparative Error Handling: Learning from minor mistakes with terrible error messages</title>
+    <title>Effective Error Handling: Learning from minor mistakes with terrible error messages</title>
 
     <meta name="description" content="Comparative Error Handling: Learning from minor mistakes with terrible error messages">
 
@@ -28,6 +28,7 @@
       span.green { color: #18A218; }
       span.grey { color: #999; }
       span.sml { font-size: 80%; margin-bottom: 3%; }
+      .error-code { color: red !important; font-family: 'courier new' !important; }
 
       #links-slide p { text-align: left; }
     </style>
@@ -52,7 +53,7 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Comparative Error Handling:</h1>
+          <h1>Effective Error Handling:</h1>
           <h2 class="title-head">Learning from minor mistakes<br />with terrible error messages</h2><br />
           <hr /><br />
           <h4><b>Brittany Storoz</b></h4>
@@ -61,16 +62,15 @@
           <p><b>Twitter</b> | <a href="http://twitter.com/brittanystoroz">@brittanystoroz</a></p><br />
         </section>
         <section>
-          <p>"Rails is like a black box of magic, I don't understand how everything is connected"</p>
-          <p>"Why are there so many files in this repo, where do I start?"</p>
-          <p>"I tried following the documentation but still don't have enough context..."</p>
-          <p>"I feel like there's a code smell here somewhere, but I'm not senior enough to know for sure"</p>
-          <p>varied syntax</p>
-          <p>differences between versions of particular tools</p>
+          <p class="fragment"><i>"Rails is just a black box of magic,<br />I don't understand how everything is connected"</i></p><br />
+          <p class="fragment"><i>"Ahhhhh there so many files in this repo!<br /> Where do I start?"</i></p><br />
+          <p class="fragment"><i>"I tried following the documentation, but there was none."</i></p><br />
+          <p class="fragment"><i>"There are so many different frameworks and libraries,<br /> how do you choose your toolset?"</i></p><br />
+          <p class="fragment"><i>"I can write the same functionality in multiple different ways, <br /> which is considered best practice?"</i></p>
         </section>
         <section>
           <h1>Error handling</h1>
-          <p>"Well-written applications include error-handling code that allows them to recover gracefully from unexpected errors. When an error occurs, the application may need to request user intervention, or it may be able to recover on its own. In extreme cases, the application may log the user off or shut down the system."</p>
+          <p><img src="img/blue-world.jpg" style="width: 75%" /></p>
         </section>
         <section>
           <h2><img src="img/always.jpg" class="full" /></h2>
@@ -85,9 +85,6 @@
           <h2><img src="img/some_reason.png" class="full" /></h2>
         </section>
         <section>
-          <h2><img src="img/blue-world.jpg" class="full" /></h2>
-        </section>
-        <section>
           <h2><img src="img/catastrophic.gif" class="full" /></h2>
         </section>
         <section>
@@ -98,13 +95,16 @@
         </section>
         <section>
           <h2>Don't Hate Me</h2>
-          <h3>I'm a JavaScript Developer</h3>
+          <h3 class="fragment">I'm a JavaScript Developer</h3>
         </section>
         <section>
           <h2><img src="img/react-module.png" class="full" /></h2>
         </section>
         <section>
           <h2><img src="img/flesh.png" class="full" /></h2>
+        </section>
+        <section>
+          <h2 class="error-code">WE NEED A BETTER ERROR MESSAGE HERE</h2>
         </section>
         <section>
           <h3>it can't possibly be this bad in other <br />languages, with other frameworks<br /><br />...JavaScript must be the worst...</h3>
@@ -120,16 +120,38 @@
             <li class="fragment">we're lazy</li>
           </ul>
         </section>
+        <section>
+          <img class="full" src="img/github-search-errors.png" />
+        </section>
 
         <section data-background-transition="none" data-background="#fff">
           <h2>How can we fix this?</h2>
-          <ul>
-            <li class="fragment">self-correcting errors</li>
-            <li class="fragment">community support</li>
-            <li class="fragment">friendlier stack traces</li>
-            <li class="fragment">writing for our users, not ourselves</li>
-          </ul>
+          <p class="fragment">self-correcting errors</p>
+          <img class="fragment" src="img/rubocop-autocorrect.gif" />
         </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>How can we fix this?</h2>
+          <p class="fragment">community support</p>
+          <img class="fragment" src="img/devtools-learnmore.png" />
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>How can we fix this?</h2>
+          <p class="fragment">friendlier stack traces</p>
+          <img class="fragment" src="img/firefox-devtools.png" />
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h2>How can we fix this?</h2>
+          <p class="fragment">writing for our users, not ourselves</p>
+          <img class="fragment" src="img/devtools-learnmore.png" />
+        </section>
+
+        <section data-background-transition="none" data-background="#fff">
+          <h3>We're all juniors when learning<br /> a new language or toolset</h3>
+        </section>
+
       </div>
 
     </div>
