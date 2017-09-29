@@ -28,7 +28,7 @@
       span.green { color: #18A218; }
       span.grey { color: #999; }
       span.sml { font-size: 80%; margin-bottom: 3%; }
-      .error-code { color: red !important; font-family: 'courier new' !important; }
+      .error-code { color: red !important; font-weight: 400 !important; font-family: 'courier new' !important; }
 
       #links-slide p { text-align: left; }
     </style>
@@ -98,7 +98,7 @@
           <h2><img src="img/flesh.png" class="full" /></h2>
         </section>
         <section>
-          <h2 class="error-code">WE NEED A BETTER ERROR MESSAGE HERE</h2>
+          <h2 class="error-code">"TODO: NEED A BETTER <br />ERROR MESSAGE HERE"</h2>
         </section>
         <section>
           <h3>it can't possibly be this bad in other <br />languages, with other frameworks<br /><br />...JavaScript must be the worst...</h3>
@@ -111,38 +111,42 @@
         </section>
         <section>
           <h2>Why is error handling so bad?</h2>
-          <ul>
-            <li class="fragment">they're written for the developers and programs themselves, not the users who run into them</li>
-            <li class="fragment"><img src="img/shakespeare.jpg" class="full" /></li>
-            <li class="fragment">programs can only understand so much about intent</li>
-            <li class="fragment">we're lazy</li>
-          </ul>
+          <h3 class="fragment">Errors are written for the developers, <br />not the users who run into them</h3>
+          <img src="img/shakespeare.jpg" class="full fragment" />
         </section>
         <section>
-          <img class="full" src="img/github-search-errors.png" />
+          <h2>Why is error handling so bad?</h2>
+          <h3 class="fragment">programs can only understand so much about intent</h3>
+          <br />
+          <img src="img/unexpected-token.png" class="full fragment" />
+          <br />
+        </section>
+        <section>
+          <h2>Why is error handling so bad?</h2>
+          <h3 class="fragment">we're lazy</h3>
+          <img class="full fragment" src="img/github-search-errors.png" />
+        </section>
+        <section data-background-transition="none" data-background="#fff">
+          <h2>How can we fix this?</h2>
+          <h3 class="fragment">self-correcting errors, awareness of intent</h3>
+          <img class="fragment height" src="img/rubocop-autocorrect.png" />
         </section>
 
         <section data-background-transition="none" data-background="#fff">
           <h2>How can we fix this?</h2>
-          <p class="fragment">self-correcting errors</p>
-          <img class="fragment" src="img/rubocop-autocorrect.gif" />
-        </section>
-
-        <section data-background-transition="none" data-background="#fff">
-          <h2>How can we fix this?</h2>
-          <p class="fragment">community support</p>
+          <h3 class="fragment">community support and resources</h3>
           <img class="fragment" src="img/devtools-learnmore.png" />
         </section>
 
         <section data-background-transition="none" data-background="#fff">
           <h2>How can we fix this?</h2>
-          <p class="fragment">friendlier stack traces</p>
-          <img class="fragment" src="img/firefox-devtools.png" />
+          <h3 class="fragment">friendlier stack traces</h3>
+          <img class="fragment" src="img/firefox-call-stacks.jpg" />
         </section>
 
         <section data-background-transition="none" data-background="#fff">
           <h2>How can we fix this?</h2>
-          <p class="fragment">writing for our users, not ourselves</p>
+          <h3 class="fragment">writing for our users, not ourselves</h3>
           <img class="fragment" src="img/devtools-learnmore.png" />
         </section>
 
